@@ -46,7 +46,7 @@ while (isTrue) {
     else await changeYear(date)
 }
 
-if (status) console.log({count, status})
-else console.log({count, status})
+if (status) console.log(`Your github streak is ${count}. ${status}.`)
+else console.log(`Your github streak is ${count}.`)
 
 await browser.close();
