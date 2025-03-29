@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import puppeteer from 'puppeteer';
 
 const browser = await puppeteer.launch();
@@ -5,6 +6,7 @@ const page = await browser.newPage();
 let count = 0;
 let status;
 let today = true;
+let isTrue = true;
 
 await page.goto('https://github.com/drewlong314');
 
@@ -39,7 +41,6 @@ const changeYear = async (date) => {
     }, year);
 }
 
-let isTrue = true;
 while (isTrue) {
     const element = await getDataLevel(date)
     if (element) handleDataLevel(element)
