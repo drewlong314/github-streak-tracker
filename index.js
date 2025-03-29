@@ -32,15 +32,21 @@ const handleDataLevel = (element) => {
     }
 }
 
+const changeYear = async (date) => {
+    const year = date.getFullYear()
+    await page.evaluate((year) => {
+        return document.getElementById(`year-link-${year}`)?.click();
+    }, year);
+}
+
 let isTrue = true;
 while (isTrue) {
     const element = await getDataLevel(date)
-    handleDataLevel(element)
+    if (element) handleDataLevel(element)
+    else await changeYear(date)
 }
 
 if (status) console.log({count, status})
 else console.log({count, status})
-
-
 
 await browser.close();
