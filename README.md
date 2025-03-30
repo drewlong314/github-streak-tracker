@@ -30,16 +30,10 @@ Ensure you have the following installed:
     ```
 
 ## Usage
-Run the script using Node.js:
+Run the script using Typescript:
 
 ```bash
-./index.js
-```
-
-Alternatively:
-
-```bash
-node index.js
+npx tsc index.ts
 ```
 
 ### Output
