@@ -33,7 +33,7 @@ Ensure you have the following installed:
 Run the script using Typescript:
 
 ```bash
-npx tsc index.ts
+npx tsx index.ts
 ```
 
 ### Output
