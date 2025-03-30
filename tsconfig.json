@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "outDir": "./built",
-    "allowJs": true,
     "module": "NodeNext",
     "target": "es2017",
     "moduleResolution": "nodenext",
