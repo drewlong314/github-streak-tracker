@@ -1,9 +1,12 @@
 {
   "type": "module",
   "bin": {
-    "mycommand": "./index.js"
+    "mycommand": "./index.ts"
   },
   "dependencies": {
     "puppeteer": "^24.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
   }
 }

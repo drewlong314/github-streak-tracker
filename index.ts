@@ -4,7 +4,7 @@ import puppeteer from 'puppeteer';
 const browser = await puppeteer.launch();
 const page = await browser.newPage();
 let count = 0;
-let status;
+let status: string | null = null;
 let today = true;
 let isTrue = true;
 
@@ -14,15 +14,15 @@ await page.waitForSelector('[data-date]', { timeout: 10000 });
 
 const date = new Date()
 
-const getDataLevel = async (date) => {
+const getDataLevel = async (date: Date) => {
     const element = await page.evaluate((date) => {
         return document.querySelector(`[data-date="${date}"]`)?.getAttribute('data-level');
     }, date.toISOString().split('T')[0]);
     return element
 }
 
-const handleDataLevel = (element) => {
-    if (element > 0) {
+const handleDataLevel = (element: string | number) => {
+    if (Number(element) > 0) {
         count++
         date.setDate(date.getDate() - 1)
     } else {
@@ -34,7 +34,7 @@ const handleDataLevel = (element) => {
     }
 }
 
-const changeYear = async (date) => {
+const changeYear = async (date: Date) => {
     const year = date.getFullYear()
     await page.evaluate((year) => {
         return document.getElementById(`year-link-${year}`)?.click();

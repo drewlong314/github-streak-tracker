@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "outDir": "./built",
+    "allowJs": true,
+    "module": "NodeNext",
+    "target": "es2017",
+    "moduleResolution": "nodenext",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "strictNullChecks": true,
+  },
+  "files": ["index.ts"]
+}
